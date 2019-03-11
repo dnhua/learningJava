@@ -36,7 +36,29 @@ public class Sort<T extends Comparable<T>>  {
         if (nums==null)
             return;
         int length = nums.length;
-        for
+        for (int i=1; i<length; i++) {
+            for (int j=i; j>0 && nums[j].compareTo(nums[j-1])<0; j--) {
+                swap(nums, j, j-1);
+            }
+        }
+    }
+
+    public void shell(T[] nums) {
+        if (nums==null)
+            return;
+        int length = nums.length;
+        int h = 1;
+        while (h<length/3) {
+            h = h * 3 + 1;
+        }
+        while (h>=1) {  //这里一定要是>=1, 保证最后进行一次插入排序
+            for (int i=h; i<length; i++) {
+                for (int j=i; j>=h && nums[j].compareTo(nums[j-h])<0; j=j-h) {
+                    swap(nums, j, j-h);
+                }
+            }
+            h = h / 3;
+        }
     }
 
     private void swap(T[] nums, int i, int j) {
