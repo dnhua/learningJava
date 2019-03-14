@@ -1,5 +1,7 @@
 package newcode;
 
+import java.util.List;
+
 /**
  * 链表中环的入口结点
  *
@@ -19,7 +21,24 @@ package newcode;
  */
 public class Solution23 {
     public ListNode EntryNodeOfLoop(ListNode pHead) {
-
+        ListNode slow = pHead;
+        ListNode fast = pHead;
+//        while (fast!=null && slow!=fast) {    //这么写是不行的，一开始就跳出了循环
+//            fast = fast.next.next;
+//            slow = slow.next;
+//        }
+        do {
+            fast = fast.next.next;
+            slow = slow.next;
+        } while (slow != fast);
+        if (fast == null)
+            return null;
+        slow = pHead;
+        while (fast!=slow) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        return slow;
     }
 
     private class ListNode {
