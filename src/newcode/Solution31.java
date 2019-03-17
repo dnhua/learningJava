@@ -1,5 +1,7 @@
 package newcode;
 
+import org.junit.jupiter.api.Test;
+
 import java.util.Stack;
 
 /**
@@ -17,12 +19,12 @@ public class Solution31 {
     public boolean IsPopOrder(int [] pushA,int [] popA) {
         Stack<Integer> stack = new Stack<>();
         int i = 0, j = 0;
-        while (i < pushA.length && j < popA.length) {
-            if (stack.isEmpty()) {
-                stack.push(pushA[i]);
-                i++;
-            }
-            if (stack.peek() != popA[i]) {
+        stack.push(pushA[0]);
+        i++;
+        while (i <= pushA.length && j < popA.length) {
+            if (stack.peek() != popA[j]) {
+                if (i == pushA.length)
+                    return false;
                 stack.push(pushA[i]);
                 i++;
             } else {
@@ -30,6 +32,15 @@ public class Solution31 {
                 j++;
             }
         }
-        return i == pushA.length && j == pushA.length;
+        return stack.isEmpty();
+    }
+
+    @Test
+    void test() {
+        Solution31 solution31 = new Solution31();
+        int[] pushA = new int[]{1,2,3,4,5};
+        int[] popA = new int[]{4,3,5,1,2};
+        Boolean b = solution31.IsPopOrder(pushA, popA);
+        System.out.println(b);
     }
 }
