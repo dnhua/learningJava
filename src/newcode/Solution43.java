@@ -9,7 +9,7 @@ import java.util.*;
  * 出现一次的字符是 "g"。当从该字符流中读出前六个字符“
  * google" 时，第一个只出现一次的字符是 "l"。
  */
-public class Soluntion43 {
+public class Solution43 {
     private Set<Character> set = new HashSet<>();
     private Deque<Character> queue = new LinkedList<>();
     //Insert one char from stringstream
