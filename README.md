@@ -1,4 +1,4 @@
-# 算法、刷题、leetcode
+# 算法、刷题、leetcode、设计模式
 src/sort 里面是各种排序 <br>
 src/newcode 剑指offer  <br>
 src/leetcode leetcode <br>
