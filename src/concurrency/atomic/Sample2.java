@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
  * 输入 hello
  * 线程1，2，3分别给这个字符串拼接 _a,_b,_c
  * 最后打印 hello_a_b_c
+ * 这篇博客：https://blog.csdn.net/Small_Lee/article/details/79321871还记录了一些其他的方案
  */
 public class Sample2 {
     private String s = "hello";
