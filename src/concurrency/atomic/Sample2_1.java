@@ -93,3 +93,83 @@ public class Sample2_1 {
         }
     }
 }
+
+///**
+// * 可参考的实现线程顺序执行方式3：
+// * 同步方法结合wait和notify
+// * 可以实现多轮打印
+// */
+//public class TestThread3 {
+//    public static void main(String[] args) {
+//        final Alternate alternate = new Alternate();
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                for (int i = 1; i <= 2; i++) {
+//                    alternate.printA();
+//                }
+//            }
+//        }, "A").start();
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                for (int i = 1; i <= 2; i++) {
+//                    alternate.printB();
+//                }
+//            }
+//        }, "B").start();
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                for (int i = 1; i <= 2; i++) {
+//                    alternate.printC();
+//                }
+//            }
+//        }, "C").start();
+//    }
+//    static class Alternate {
+//        private int num = 1;
+//        public synchronized void printA() {
+//            try {
+//                if (num != 1) {
+//                    wait();
+//                }
+//                for (int i = 1; i <= 3; i++) {
+//                    System.out.println(Thread.currentThread().getName() + i);
+//                }
+//                num = 2;
+//                notifyAll();
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//        public synchronized void printB() {
+//            try {
+//                if (num != 2) {
+//                    wait();
+//                }
+//                for (int i = 1; i <= 3; i++) {
+//                    System.out.println(Thread.currentThread().getName() + i);
+//                }
+//                num = 3;
+//                notifyAll();
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//        public synchronized void printC() {
+//            try {
+//                if (num != 3) {
+//                    wait();
+//                }
+//                for (int i = 1; i <= 3; i++) {
+//                    System.out.println(Thread.currentThread().getName() + i);
+//                }
+//                num = 3;
+//                notifyAll();
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//    }
+//}
