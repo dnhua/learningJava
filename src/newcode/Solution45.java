@@ -3,7 +3,7 @@ package newcode;
 import org.junit.jupiter.api.Test;
 
 /**
- * 二进制1的总数
+ * 十进制 1 的总数
  */
 public class Solution45 {
     public int NumberOf1Between1AndN_Solution(int n) {
