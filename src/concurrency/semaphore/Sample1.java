@@ -6,7 +6,7 @@ import java.util.concurrent.Semaphore;
  * semaphore的示例1
  * Semaphore翻译成字面意思为 信号量，Semaphore可以控同时访问的线程个数，
  * 通过 acquire() 获取一个许可，如果没有就等待，而 release() 释放一个许
- * 可。
+ * 可。。
  */
 public class Sample1 {
     public static void main(String[] args) {
