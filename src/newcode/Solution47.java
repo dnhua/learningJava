@@ -25,7 +25,7 @@ public class Solution47 {
     }
 
     @Test
-    public void test() {
+    public void test(){
         String s = PrintMinNumber(new int[]{1, 4, 3, 2, 5});
         System.out.println(s);
     }
