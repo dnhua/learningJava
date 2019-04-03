@@ -17,7 +17,7 @@ public class Solution51 {
         dp[0] = 1;
         for (int i=1; i<index; i++) {
             int next2=dp[index2]*2, next3=dp[index3]*3, next5=dp[index5]*5;
-            dp[i] = Math.min(next2, Math.min(next3, next5));
+            dp[i] = Math.min(next2, Math.min(next3, next5));    //这里比较重要
             if (dp[i]==next2)
                 index2++;
             if (dp[i]==next3)
