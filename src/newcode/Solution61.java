@@ -10,28 +10,31 @@ import java.util.ArrayList;
  * 找出所有和为S的连续正数序列? Good Luck!
  */
 public class Solution61 {
-    public ArrayList<ArrayList<Integer>> FindContinuousSequence(int sum) {
-        ArrayList<ArrayList<Integer>> ret = new ArrayList<>();
-        int start = 1, end = 2;
+    public ArrayList<ArrayList<Integer> > FindContinuousSequence(int sum) {
+        ArrayList<ArrayList<Integer>> res = new ArrayList<>();
+        int l = 1;
+        int r = 2;
         int curSum = 3;
-        while (end < sum) {
-            if (curSum > sum) {
-                curSum -= start;
-                start++;
-            } else if (curSum < sum) {
-                end++;
-                curSum += end;
-            } else {
+        while (r < sum) {
+            //找到一个解
+            if (curSum == sum) {
                 ArrayList<Integer> list = new ArrayList<>();
-                for (int i = start; i <= end; i++)
+                for (int i=l; i<=r; i++) {
                     list.add(i);
-                ret.add(list);
-                curSum -= start;
-                start++;
-                end++;
-                curSum += end;
+                }
+                res.add(list);
+                curSum -= l;
+                l++;
+                r++;
+                curSum += r;
+            } else if (curSum < sum) {
+                r++;
+                curSum += r;
+            } else {
+                curSum -= l;
+                l++;
             }
         }
-        return ret;
+        return res;
     }
 }
