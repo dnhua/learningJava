@@ -1,4 +1,4 @@
-package solution;
+package solution.linkedlist;
 
 /**
  * 链表元素按奇偶下标聚集

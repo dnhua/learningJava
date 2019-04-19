@@ -1,4 +1,4 @@
-package solution;
+package solution.linkedlist;
 
 /**
  * 链表反转

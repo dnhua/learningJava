@@ -1,4 +1,4 @@
-package solution;
+package solution.linkedlist;
 
 /**
  * 从有序链表中删除重复节点

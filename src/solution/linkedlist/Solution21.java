@@ -1,4 +1,4 @@
-package solution;
+package solution.linkedlist;
 
 /**
  * 归并两个有序的链表

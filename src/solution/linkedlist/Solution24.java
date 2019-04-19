@@ -1,4 +1,4 @@
-package solution;
+package solution.linkedlist;
 
 /**
  * 交换链表中的相邻结点
