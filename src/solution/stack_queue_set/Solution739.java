@@ -4,6 +4,7 @@ import java.util.Stack;
 
 /**
  * 数组中元素与下一个比它大的元素之间的距离
+ * https://leetcode.com/problems/daily-temperatures/
  */
 public class Solution739 {
     public int[] dailyTemperatures(int[] T) {
