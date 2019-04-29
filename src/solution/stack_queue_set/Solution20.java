@@ -5,7 +5,7 @@ import java.util.Stack;
 /**
  * 用栈实现括号匹配
  */
-public class Solution30 {
+public class Solution20 {
     public boolean isValid(String s) {
         Stack<Character> stack = new Stack<>();
         for (char c : s.toCharArray()) {
