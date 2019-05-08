@@ -14,15 +14,14 @@ package solution.dp;
  */
 public class Solution70 {
     public int climbStairs(int n) {
-        if (n <= 2) {
+        if (n <= 2)
             return n;
+        int n_1 = 2, n_2 = 1;
+        for (int i=2; i<n; i++) {
+            int cur = n_1 + n_2;
+            n_2 = n_1;
+            n_1 = cur;
         }
-        int pre2 = 1, pre1 = 2;
-        for (int i = 2; i < n; i++) {
-            int cur = pre1 + pre2;
-            pre2 = pre1;
-            pre1 = cur;
-        }
-        return pre1;
+        return n_1;
     }
 }
