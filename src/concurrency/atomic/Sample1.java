@@ -32,7 +32,7 @@ public class Sample1 {
                 sample.nonSafeAction();
             }
         };
-        threadA.start();
+        threadA.start() ;
         threadB.start();
         threadA.join();
         threadB.join();
