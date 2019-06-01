@@ -4,20 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 含有相同元素求子集
- * 90. Subsets II (Medium)
- * https://leetcode.com/problems/subsets/
- * For example,
- * If nums = [1,2,2], a solution is:
- *
- * [
- *   [2],
- *   [1],
- *   [1,2,2],
- *   [2,2],
- *   [1,2],
- *   []
- * ]
+ * 子集
+ * 找出集合的所有子集，子集不能重复，[1, 2] 和 [2, 1] 这种子集算重复
  */
 public class Solution78 {
     public List<List<Integer>> subsets(int[] nums) {
