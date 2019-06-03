@@ -17,7 +17,7 @@ public class Gcd {
         if (b == 0) {
             return a;
         }
-        boolean isAEven = isEven(a), isBEven = isEven(b);
+        boolean isAEven = a % 2 == 0 ? true : false, isBEven = b % 2 == 0 ? true : false;
         if (isAEven && isBEven) {
             return 2 * gcd(a >> 1, b >> 1);
         } else if (isAEven && !isBEven) {
