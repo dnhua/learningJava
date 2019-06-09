@@ -20,24 +20,22 @@ public class Solution3 {
     public static int soulution(int money, int[] value, int[] hot) {
         if (money <= 0)
             return 0;
-        int[][] dp = new int[value.length][money+1];
-        for (int i=0; i<money+1; i++) {
-            if (i >= value[0])
-                dp[0][i] = hot[0];
-        }
+        int[][] dp = new int[value.length+1][money+1];
 
-        for (int i=1; i<value.length; i++) {
+        for (int i=1; i<value.length+1; i++) {
+            int v = value[i-1], h = hot[i-1];
             for (int j=1; j<money+1; j++) {
-                if (value[i] > j) {
+                if (v > j) {
                     dp[i][j] = dp[i-1][j];
                 } else {
-                    int temp1 = dp[i-1][j-value[i]]+hot[i];
-                    int temp2 = dp[i-1][j];
-                    dp[i][j] = temp1 > temp2 ? temp1 : temp2;
+//                    int temp1 = dp[i-1][j-v]+h;
+//                    int temp2 = dp[i-1][j];
+//                    dp[i][j] = temp1 > temp2 ? temp1 : temp2;
+                    dp[i][j] = Math.max(dp[i-1][j], dp[i-1][j-v] + h);
                 }
             }
         }
-        return dp[value.length-1][money];
+        return dp[value.length][money];
     }
 
     public static void main(String[] args) {
