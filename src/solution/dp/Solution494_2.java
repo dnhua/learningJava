@@ -3,6 +3,11 @@ package solution.dp;
 public class Solution494_2 {
     public int findTargetSumWays(int[] nums, int S) {
         int sum = computeArraySum(nums);
+
+        if (sum < S || (sum + S) % 2 == 1) {
+            return 0;
+        }
+        改变一组数的正负号使得它们的和为一给定数
         int W = (S + sum) / 2;
         int[] dp = new int[W+1];
         dp[0] = 1;
