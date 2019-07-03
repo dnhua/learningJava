@@ -23,4 +23,14 @@ public class Solution55 {
         }
         return canArravied[nums.length-1] == true;
     }
+
+    public boolean canJump2(int[] nums) {
+        //思路2：从后往前遍历
+        int last = nums.length - 1;
+        for (int i=nums.length-1; i>=0; i--) {
+            if (nums[i] + i >= last)
+                last = i;
+        }
+        return last == 0;
+    }
 }
