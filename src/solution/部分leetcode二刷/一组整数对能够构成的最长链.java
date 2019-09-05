@@ -8,12 +8,12 @@ public class 一组整数对能够构成的最长链 {
             return 0;
         int n = pairs.length;
         int[] dp = new int[n];
-        Arrays.sort(pairs, (pair1, pair2)->(pair2[0] - pair1[0]));  //排序
+        Arrays.sort(pairs, (pair1, pair2)->(pair1[0] - pair2[0]));  //排序
         Arrays.fill(dp, 1);
         int max = 1;
         for (int i=1; i<n; i++) {
             for (int j=0; j<i; j++) {
-                if (pairs[j][0] > pairs[i][1]) {
+                if (pairs[i][0] > pairs[j][1]) {
                     dp[i] = Math.max(dp[i], dp[j] + 1);
                 }
             }
